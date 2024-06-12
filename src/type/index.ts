@@ -8,3 +8,9 @@ export type OrderItem= MenuItems & {
  
   "quantity":number
 }
+
+export type PropinasProps={
+  "id":string;
+  "value": number;
+  "label":string;
+}

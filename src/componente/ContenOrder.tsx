@@ -9,9 +9,7 @@ const ContenOrder = ({ order,removeItem }: orderProps) => {
     <div>
       <h2 className=" font-black text-4xl">Consumo</h2>
       <div className=" space-y-3 mt-5">
-        {order.length === 0 ? (
-          <p className=" text-current">No hay orden por el momento</p>
-        ) : (
+        {
           order.map((iten) => (
             <div key={iten.id} 
             className=" items-center flex justify-between border-t
@@ -29,8 +27,7 @@ const ContenOrder = ({ order,removeItem }: orderProps) => {
                 X
               </button>
             </div>
-          ))
-        )}
+          ))}
       </div>
     </div>
   );

@@ -1,7 +1,10 @@
 import { useState } from "react";
 import type { MenuItems, OrderItem } from "../type";
 export default function useOrder() {
-  const [order, setOrder] = useState<OrderItem[]>([]); //agregando type a un hooks
+  //agregando type a un hooks
+  const [order, setOrder] = useState<OrderItem[]>([]);
+  //Hooks de propinas
+  const [tip, setTip] = useState(0);
   //Agregar una orden
   const addIten = (items: MenuItems) => {
     //evitando registros duplicados
@@ -22,9 +25,16 @@ export default function useOrder() {
   const removeItem = (id: MenuItems["id"]) => {
     setOrder(order.filter((item) => item.id !== id)); //Eliminando un elemento
   };
+  const placeOrder = () => {
+    setOrder([]);
+    setTip(0);
+  };
   return {
     order,
+    tip,
+    setTip,
     addIten,
     removeItem,
+    placeOrder,
   };
 }
