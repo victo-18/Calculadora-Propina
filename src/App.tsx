@@ -20,7 +20,7 @@ function App() {
           <h2 className=" text-4xl font-black">Menú</h2>
           <div className=" space-y-3 mt-10">
             {menuItems.map((items) => (
-              <MenuIten key={items.id} items={items} addIten={addIten} />
+              <MenuIten key={items.id} items={items} addItem={addIten} />
             ))}
           </div>
         </div>
